@@ -21,7 +21,10 @@ chapterDrawer?.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') setDrawer(false);
+  if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
+    setDrawer(false);
+    menuButton.focus();
+  }
 });
 
 function updateProgress() {
