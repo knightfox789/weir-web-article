@@ -1,8 +1,10 @@
 # Weir Research — Interactive Web Article
 
-**Repository status:** Phase 2 complete — analytical lineage, runtime data contracts and integrity audit PASS
+**Repository status:** Phase 11 complete — mobile/responsive, accessibility, performance/lazy-rendering and SEO QA PASS; Phase 12 scientific QA next
 
 This repository publishes the completed small-weir parametric research as a **story-driven, interactive, GitHub Pages web article**.
+
+**Live article:** https://knightfox789.github.io/weir-web-article/
 
 The publication is not a static research paper copied into HTML and not a field-design calculator. Its central question is:
 
@@ -30,9 +32,11 @@ Because GitHub Pages runs entirely in the browser, values required for a live in
 The implementation follows the controlled phase sequence documented in `docs/CONTROLLED_BUILD_SEQUENCE_AND_AUDIT_PROTOCOL.md`. Every phase must pass storyline fidelity, scientific fidelity, figure/data fidelity and architecture-restraint audits before the next phase begins.
 
 Current status:
-- **Phase 1 — PASS:** story architecture and 17 web-figure roles frozen.
-- **Phase 2 — PASS:** all 21 original analytical figures have source/method lineage; all 17 web figures have complete data/interactivity contracts; compact runtime JSON exists for FIG-03–FIG-17; the corrected scientific audit passes 24/24 frozen-result checks.
-- **Phase 3 — not started in this repository state.**
+- **Phases 1–3 — PASS:** story architecture, analytical lineage/data contracts and the semantic publication shell are established.
+- **Phases 4–9 — PASS:** FIG-01 through FIG-17 are live, including the Research Explorer, with controlled figure/data audits.
+- **Phase 10 — PASS:** complete reader-language editorial rewrite with scientific-preservation audit.
+- **Phase 11 — PASS:** responsive/mobile, accessibility, reduced-motion, performance/lazy-rendering and SEO QA.
+- **Phase 12 — NEXT:** scientific QA against the frozen research outputs.
 
 ## Phase 2 provenance
 
@@ -59,13 +63,14 @@ The visual language builds on Kaushal Gadariya's existing `GIS-Recharge-Web-Arti
 
 The Weir Research article extends this with animated data-driven visualization, linked interactions, a research explorer and figure-level provenance.
 
-## Planned technology
+## Implemented technology
 
-- HTML5 + modern CSS
-- Vanilla JavaScript modules
-- D3.js for custom analytical SVG/canvas charts
-- Scrollama and/or native IntersectionObserver for scrollytelling
+- semantic HTML5 + responsive modern CSS
+- vanilla JavaScript ES modules
+- browser-native SVG for analytical graphics
+- native `IntersectionObserver` for chapter state and lazy figure rendering
 - compact generated JSON runtime assets for visualization data
+- keyboard/tap controls, reduced-motion support and accessible chart summaries
 - GitHub Pages deployment
 - no proprietary visual assets or static analytical figure images
 
