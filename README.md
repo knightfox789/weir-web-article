@@ -1,6 +1,6 @@
 # Weir Research — Interactive Web Article
 
-**Repository status:** Phase 11 complete — mobile/responsive, accessibility, performance/lazy-rendering and SEO QA PASS; Phase 12 scientific QA next
+**Repository status:** Publication release candidate — Phases 1–12 PASS; Phase 13 deployed-site browser acceptance PASS on the controlled release candidate and pending final merge/main verification.
 
 This repository publishes the completed small-weir parametric research as a **story-driven, interactive, GitHub Pages web article**.
 
@@ -36,18 +36,20 @@ Current status:
 - **Phases 4–9 — PASS:** FIG-01 through FIG-17 are live, including the Research Explorer, with controlled figure/data audits.
 - **Phase 10 — PASS:** complete reader-language editorial rewrite with scientific-preservation audit.
 - **Phase 11 — PASS:** responsive/mobile, accessibility, reduced-motion, performance/lazy-rendering and SEO QA.
-- **Phase 12 — NEXT:** scientific QA against the frozen research outputs.
+- **Phase 12 — PASS:** 374/374 scientific/provenance checks; all 21 authoritative sources and all 15 publication runtime assets verified/reproduced under the controlled build path.
+- **Phase 13 — RELEASE CANDIDATE PASS:** deployed GitHub Pages exercised with Playwright 1.63.0 across Chromium desktop, Chromium mobile/reduced-motion, Firefox desktop and WebKit mobile; final `main` verification follows the merge.
 
-## Phase 2 provenance
+## Provenance and reproducibility
 
 - `data/metadata/original-figure-lineage.json` — 21 original analytical figures and their upstream methods.
 - `data/metadata/figure-mapping.json` — 21 original figures consolidated into 17 web figures.
 - `data/metadata/web-figure-contracts.json` — population/filter/method/output/headline/caveat/interactivity for each web figure.
 - `data/metadata/source-sha-manifest.json` — SHA-256 identity of 21 authoritative build inputs.
-- `data/metadata/runtime-asset-manifest.json` — public runtime asset hashes and sizes.
-- `data/metadata/phase-02-audit-results.json` — machine-readable corrected audit.
-- `scripts/build_phase2_data.py` — reproducible build and quantitative integrity checks.
-- `docs/PHASE_02_ANALYTICAL_LINEAGE.md` and `docs/audits/PHASE_02_AUDIT.md` — human-readable audit trail.
+- `data/metadata/runtime-asset-manifest.json` — hashes and sizes of the final public runtime assets.
+- `scripts/build_phase2_data.py` — reproducible Phase 2 base runtime build and quantitative integrity checks.
+- `scripts/build_phase4_runtime_support.py` — approved render-support augmentation for FIG-03/05/06; it does not refit research results.
+- `docs/PHASE_02_ANALYTICAL_LINEAGE.md` and phase audit files under `docs/audits/` — human-readable audit trail.
+- `.github/workflows/phase13-browser-acceptance.yml` — deployed-site release browser gate.
 
 ## Design DNA
 
