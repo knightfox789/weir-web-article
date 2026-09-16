@@ -3,6 +3,7 @@ name: Phase 13 browser acceptance
 on:
   push:
     branches:
+      - main
       - phase-13-browser-acceptance
   workflow_dispatch:
 
@@ -24,6 +25,7 @@ jobs:
         run: |
           npm init -y
           npm install --save-dev playwright
+          npx playwright --version
           npx playwright install --with-deps chromium firefox webkit
       - name: Run deployed-site browser acceptance
         env:
