@@ -1,0 +1,39 @@
+/* Phase 9 — Research Explorer */
+.p9-explorer-controls, .p9-dynamic-controls { display:flex; flex-wrap:wrap; gap:10px; grid-column:1/-1; align-items:end; }
+.p9-dynamic-controls { padding-top:2px; }
+.p9-download { border:1px solid rgb(11 31 51 / .2); background:var(--navy); color:var(--white); border-radius:10px; padding:10px 14px; font:inherit; font-size:.8rem; font-weight:780; cursor:pointer; }
+.p9-download:hover, .p9-download:focus-visible { box-shadow:0 0 0 3px rgb(82 199 217 / .2); outline:none; }
+.p9-loading, .p9-empty { min-height:220px; display:grid; place-items:center; color:#667580; font-weight:700; }
+.p9-chart-title { fill:var(--navy); font-size:18px; font-weight:820; }
+.p9-axis { stroke:#9da9b0; stroke-width:1.2; }
+.p9-zero { stroke:#9da9b0; stroke-width:1.1; stroke-dasharray:4 4; }
+.p9-label { fill:var(--navy); font-size:13px; font-weight:760; }
+.p9-range, .p9-cap { stroke:var(--aqua); stroke-width:3; stroke-linecap:round; }
+.p9-cap { stroke-width:1.4; }
+.p9-bar { stroke:var(--teal); stroke-width:13; stroke-linecap:round; }
+.p9-dot { fill:var(--coral); stroke:var(--white); stroke-width:1.5; }
+.p9-value { fill:#40505b; font-size:12px; font-weight:780; }
+.p9-row:focus { outline:none; }
+.p9-row:focus .p9-range, .p9-row:focus .p9-bar { stroke:var(--navy); stroke-width:5; }
+.p9-row:focus .p9-dot { stroke:var(--navy); stroke-width:3; }
+.p9-table-wrap { overflow:auto; max-width:100%; }
+.p9-table { width:100%; border-collapse:collapse; min-width:640px; font-size:.85rem; }
+.p9-table caption { text-align:left; font-weight:820; color:var(--navy); padding:4px 0 12px; }
+.p9-table th, .p9-table td { padding:10px 12px; border-bottom:1px solid rgb(11 31 51 / .1); text-align:left; }
+.p9-table th { color:var(--navy); background:rgb(11 31 51 / .04); }
+.p9-meaning-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; grid-column:1/-1; margin-top:10px; }
+.p9-meaning-card { padding:15px 16px; border-radius:12px; border:1px solid rgb(11 31 51 / .1); background:var(--white); }
+.p9-meaning-card strong { display:block; color:var(--navy); margin-bottom:5px; }
+.p9-meaning-card p { margin:0; color:#40505b; font-size:.88rem; line-height:1.55; }
+.p9-meaning-card--means { border-left:4px solid var(--teal); }
+.p9-meaning-card--not { border-left:4px solid var(--coral); }
+@media (max-width:760px) {
+  .p9-explorer-controls, .p9-dynamic-controls { display:grid; grid-template-columns:1fr; }
+  .p9-download { width:100%; }
+  .p9-meaning-grid { grid-template-columns:1fr; }
+  .p9-explorer .p4-figure__canvas { overflow-x:auto; }
+  .p9-explorer .p4-figure__canvas svg { width:860px; max-width:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .p9-explorer *, .p9-explorer *::before, .p9-explorer *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}

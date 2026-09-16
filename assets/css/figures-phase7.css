@@ -1,0 +1,41 @@
+/* Phase 7 — BJ–DAF model comparison and disagreement envelope */
+.p7-axis, .p7-tick-line { stroke: #9da9b0; stroke-width: 1.15; }
+.p7-factor-band { fill: rgb(82 199 217 / .13); stroke: none; opacity: 0; transition: opacity .7s ease; }
+.p7-entered .p7-factor-band { opacity: 1; }
+.p7-equality-line { stroke: var(--navy); stroke-width: 2.6; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .9s ease .12s; }
+.p7-entered .p7-equality-line { stroke-dashoffset: 0; }
+.p7-factor-line { stroke: var(--teal); stroke-width: 1.35; stroke-dasharray: 7 5; opacity: .78; }
+.p7-model-point { opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.45); transition: opacity .35s ease var(--point-delay,0ms), transform .35s ease var(--point-delay,0ms); }
+.p7-entered .p7-model-point { opacity: .85; transform: scale(1); }
+.p7-model-point--inside { fill: var(--teal); stroke: var(--white); stroke-width: 1.4; }
+.p7-model-point--outside { fill: var(--coral); stroke: var(--white); stroke-width: 1.8; }
+.p7-model-point:focus { outline: none; stroke: var(--navy); stroke-width: 3.5; opacity: 1; }
+.p7-term-card, .p7-meta-terms { grid-column: 1 / -1; display: grid; gap: 5px; padding: 14px 16px; border-top: 1px solid rgb(11 31 51 / .1); color: #40505b; font-size: .86rem; }
+.p7-term-card strong, .p7-meta-terms strong { color: var(--navy); }
+.p7-ratio-one { stroke: var(--navy); stroke-width: 1.25; stroke-dasharray: 5 4; opacity: .62; }
+.p7-envelope-whisker { stroke: var(--aqua); stroke-width: 3.4; stroke-linecap: round; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scaleY(.15); transition: opacity .35s ease var(--state-delay,0ms), transform .5s ease var(--state-delay,0ms); }
+.p7-envelope-cap { stroke: var(--aqua); stroke-width: 1.4; opacity: 0; transition: opacity .4s ease var(--state-delay,0ms); }
+.p7-envelope-median { fill: var(--teal); stroke: var(--white); stroke-width: 1.3; opacity: 0; transition: opacity .35s ease var(--state-delay,0ms); }
+.p7-envelope-observed { fill: var(--coral); stroke: var(--white); stroke-width: 1.5; opacity: 0; transition: opacity .35s ease calc(var(--state-delay,0ms) + 100ms); }
+.p7-entered .p7-envelope-whisker { opacity: .8; transform: scaleY(1); }
+.p7-entered .p7-envelope-cap, .p7-entered .p7-envelope-median, .p7-entered .p7-envelope-observed { opacity: 1; }
+.p7-envelope-state:focus { outline: none; }
+.p7-envelope-state:focus .p7-envelope-whisker { stroke: var(--navy); stroke-width: 5; }
+.p7-envelope-state:focus .p7-envelope-observed { stroke: var(--navy); stroke-width: 3; }
+.p7-family-f2 .p7-envelope-whisker { stroke: var(--aqua); }
+.p7-family-f3 .p7-envelope-whisker { stroke: var(--teal); }
+.p7-family-f4 .p7-envelope-whisker { stroke: var(--navy); }
+.p7-family-transition .p7-envelope-whisker { stroke: #9b8d72; }
+.p7-coverage-target { stroke: #9b8d72; stroke-width: 1.2; stroke-dasharray: 4 4; }
+.p7-coverage-bar { stroke: var(--teal); stroke-width: 5; stroke-linecap: round; }
+.p7-coverage-dot { fill: var(--teal); stroke: var(--white); stroke-width: 1.4; }
+.p7-regime-dot { fill: var(--coral); stroke: var(--white); stroke-width: 1.4; }
+
+@media (max-width: 760px) {
+  .p7-term-card, .p7-meta-terms { font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p7-factor-band, .p7-equality-line, .p7-model-point, .p7-envelope-whisker, .p7-envelope-cap, .p7-envelope-median, .p7-envelope-observed { transition: none !important; animation: none !important; }
+  .p7-factor-band, .p7-model-point, .p7-envelope-whisker, .p7-envelope-cap, .p7-envelope-median, .p7-envelope-observed { opacity: .9; transform: none; }
+  .p7-equality-line { stroke-dashoffset: 0; }
+}

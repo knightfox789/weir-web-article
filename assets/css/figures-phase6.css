@@ -1,0 +1,39 @@
+/* Phase 6 — hydraulic-jump development + foundation transition */
+.p6-channel-bed { stroke: #7c8991; stroke-width: 3; }
+.p6-water-profile { fill: none; stroke: var(--aqua); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transition: d .65s ease; }
+.p6-roller { fill: none; stroke: var(--teal); stroke-width: 3; stroke-dasharray: 8 6; opacity: .72; transition: d .65s ease; }
+.p6-depth-marker { stroke: var(--navy); stroke-width: 1.4; stroke-dasharray: 4 4; }
+.p6-length-line { stroke: var(--coral); stroke-width: 2; }
+.p6-axis { stroke: #9da9b0; stroke-width: 1.2; }
+.p6-curve { fill: none; stroke: var(--teal); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .9s ease; }
+.p6-entered .p6-curve { stroke-dashoffset: 0; }
+.p6-crosshair { stroke: var(--navy); stroke-width: 1; stroke-dasharray: 5 4; opacity: .55; }
+.p6-selected-dot { fill: var(--white); stroke: var(--coral); stroke-width: 4; }
+.p6-quantile-tick { stroke: #9b8d72; stroke-width: 2; }
+.p6-fr-control { min-width: 0; }
+
+.foundation-transition { margin: 42px 0 16px; border: 1px solid rgb(11 31 51 / .12); border-radius: 24px; overflow: hidden; background: rgb(255 255 255 / .64); }
+.foundation-transition__intro { padding: 26px 28px 22px; border-bottom: 1px solid rgb(11 31 51 / .10); }
+.foundation-transition__intro h3 { margin: 0 0 10px; font-size: clamp(1.45rem,2.5vw,2.15rem); }
+.foundation-transition__intro p { margin: 0; max-width: 82ch; color: #40505b; }
+.foundation-transition__grid { display: grid; grid-template-columns: repeat(3,1fr); }
+.foundation-transition__step { padding: 26px 28px 30px; min-height: 220px; position: relative; }
+.foundation-transition__step + .foundation-transition__step { border-left: 1px solid rgb(11 31 51 / .10); }
+.foundation-transition__eyebrow { display: block; color: var(--coral); font-size: .69rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; }
+.foundation-transition__formula { display: block; font: 500 clamp(1.35rem,2.2vw,2rem) Georgia,serif; color: var(--navy); margin: 9px 0 14px; }
+.foundation-transition__step p { margin: 0; color: #40505b; font-size: .9rem; }
+.foundation-transition__stat { margin-top: 18px; padding-top: 15px; border-top: 1px solid rgb(11 31 51 / .10); color: var(--navy); font-size: .82rem; }
+.foundation-transition__stat strong { font-family: Georgia,serif; font-size: 1.35rem; font-weight: 500; }
+.foundation-transition__handoff { padding: 18px 28px; background: var(--navy); color: var(--paper); display: flex; gap: 18px; align-items: center; justify-content: space-between; }
+.foundation-transition__handoff strong { color: var(--aqua); }
+.foundation-transition__handoff span { color: rgb(247 246 241 / .72); font-size: .86rem; }
+
+@media (max-width: 820px) {
+  .foundation-transition__grid { grid-template-columns: 1fr; }
+  .foundation-transition__step + .foundation-transition__step { border-left: 0; border-top: 1px solid rgb(11 31 51 / .10); }
+  .foundation-transition__handoff { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p6-water-profile, .p6-roller, .p6-curve { transition: none !important; animation: none !important; }
+  .p6-curve { stroke-dashoffset: 0; }
+}

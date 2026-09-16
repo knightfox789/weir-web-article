@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Really Controls a Small Weir? | Kaushal Gadariya</title>
+  <meta name="description" content="An interactive research article on how hydraulics, geometry, stability and foundation uncertainty shape small-weir behaviour across a defined synthetic research domain.">
+  <meta name="author" content="Kaushal Gadariya">
+  <meta name="theme-color" content="#0B1F33">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://knightfox789.github.io/Weir-research-article/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Really Controls a Small Weir?">
+  <meta property="og:description" content="An evidence-led interactive article connecting hydraulic response, material and stability trade-offs, normalized regimes, and foundation/scour uncertainty.">
+  <meta property="og:url" content="https://knightfox789.github.io/Weir-research-article/">
+  <meta property="og:site_name" content="Kaushal Gadariya — Research Articles">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What Really Controls a Small Weir?">
+  <meta name="twitter:description" content="Interactive evidence on how small-weir behaviour changes across hydraulics, geometry, stability and foundation uncertainty.">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to article</a>
+
+<header class="site-header" data-site-header>
+  <div class="site-header__row shell-wide">
+    <a class="site-brand" href="#top" aria-label="Back to article top">
+      <span class="site-brand__mark" aria-hidden="true">W</span>
+      <span class="site-brand__text">Weir Research</span>
+    </a>
+    <nav class="site-header__links" aria-label="Primary">
+      <a href="#chapter-03">Research</a>
+      <a href="#chapter-13">Synthesis</a>
+      <a href="#chapter-14">Explorer</a>
+      <a href="#chapter-16">Methods</a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="chapter-nav" data-menu-button>
+      <span>Chapters</span><span class="menu-button__icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="reading-progress" aria-hidden="true"><div class="reading-progress__bar" data-progress-bar></div></div>
+</header>
+
+<aside class="chapter-drawer" id="chapter-nav" aria-label="Article chapters" data-chapter-drawer>
+  <div class="chapter-drawer__inner shell-wide">
+    <p class="eyebrow">Reader journey</p>
+    <ol class="chapter-list">
+      <li><a href="#chapter-00">What really controls a small weir?</a></li>
+      <li><a href="#chapter-01">The simple section that was not simple</a></li>
+      <li><a href="#chapter-02">One change travels through the whole system</a></li>
+      <li><a href="#chapter-03">From one section to 200,000 experiments</a></li>
+      <li><a href="#chapter-04">Head is a balance, not a single driver</a></li>
+      <li><a href="#chapter-05">Forcing rises faster than it first appears</a></li>
+      <li><a href="#chapter-06">Why height quickly becomes a material penalty</a></li>
+      <li><a href="#chapter-07">Stability does not follow one simple rule</a></li>
+      <li><a href="#chapter-08">There is no single optimum weir</a></li>
+      <li><a href="#chapter-09">Four patterns recur — but only three form clear cores</a></li>
+      <li><a href="#chapter-10">High forcing does not automatically mean greater jump-development demand</a></li>
+      <li><a href="#chapter-11">Scour is where the models begin to disagree</a></li>
+      <li><a href="#chapter-12">When everything varies together, what matters most?</a></li>
+      <li><a href="#chapter-13">Putting the whole system back together</a></li>
+      <li><a href="#chapter-14">Explore the evidence yourself</a></li>
+      <li><a href="#chapter-15">What this research can — and cannot — say</a></li>
+      <li><a href="#chapter-16">Methods, data, references and author</a></li>
+    </ol>
+  </div>
+</aside>
+
+<main id="main-content">
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__grid shell-wide">
+    <div class="hero__copy">
+      <p class="eyebrow eyebrow--light">Interactive research article · Small-weir parametric study</p>
+      <h1 id="hero-title">What really controls a small weir?</h1>
+      <p class="hero__dek">A small weir is easy to draw as a section. It is harder to understand as a system. Change discharge, crest length or height and the effect can travel through head, unit discharge, jump behaviour, material demand, stability and the foundation question. This article follows those links using the study’s synthetic evidence.</p>
+      <div class="hero__meta" aria-label="Article metadata">
+        <span>Kaushal Gadariya</span>
+        <span>Soil and Water Conservation Engineer</span>
+        <span>21 source figures → 17 live web experiences</span>
+      </div>
+      <a class="hero__cta" href="#chapter-01">Follow the investigation <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="hero-visual" role="img" aria-label="Illustrative small-weir schematic showing the hydraulic, geometry and foundation questions followed through the article.">
+      <svg viewBox="0 0 760 460" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="water-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#52C7D9" stop-opacity="0.7"/><stop offset="1" stop-color="#117B7B" stop-opacity="0.18"/></linearGradient></defs>
+        <path class="hero-visual__terrain" d="M20 330 C150 310 230 330 320 330 L360 330 L405 250 L500 250 L545 330 L740 330 L740 420 L20 420 Z"/>
+        <path class="hero-visual__weir" d="M330 330 L405 250 L500 250 L545 330 Z"/>
+        <path class="hero-visual__water" d="M20 205 L405 205 L405 250 L500 250 C545 255 575 276 600 303 C625 327 670 330 740 330 L740 420 L20 420 Z"/>
+        <path class="hero-visual__flowline" d="M42 205 C170 205 290 205 405 205 C470 205 505 228 540 260 C585 301 630 317 718 317"/>
+        <line class="hero-visual__datum" x1="405" y1="205" x2="405" y2="250"/>
+        <text x="418" y="226">head H</text><text x="82" y="186">Q</text><text x="453" y="238">L</text><text x="594" y="292">jump / tailwater</text><text x="465" y="377">foundation</text>
+      </svg>
+      <p class="hero-visual__note">Opening schematic of the variables that connect the sections of the research. The live figures below use the released analytical evidence.</p>
+    </div>
+  </div>
+</section>
+
+<section class="article-intro shell-reading" id="chapter-00" data-chapter>
+  <p class="chapter-number">00</p>
+  <h2>A small weir looks simple. Its dependencies are not.</h2>
+  <p class="lede">This is not a search for one “best” section. It is a sequence of questions about which variables matter, under what conditions, and where the evidence becomes uncertain. Each chapter starts with the evidence, then separates interpretation from limitation.</p>
+  <div class="boundary-note" role="note"><strong>Research boundary.</strong> This is a synthetic research article, not a design calculator or construction guide. It can clarify relationships and trade-offs, but final field design still requires site-specific hydrology, foundation evidence, applicable standards and professional engineering review.</div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-01" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">01</p><h2>The simple section that was not simple</h2>
+  <p class="lede">The investigation began with a section that looked straightforward on paper. A closer review showed that geometry, centroid, uplift, HFL/depth assumptions and downstream protection were not all internally resolved.</p>
+  <p class="chapter-bridge">The useful question therefore became broader than checking arithmetic: is the whole hydraulic–structural system being represented consistently?</p></div>
+  <div class="figure-mount " id="fig-01" data-figure="FIG-01" data-source="data/metadata/initiating-case.json" aria-label="Initiating weir diagnostic figure mount">
+  <span class="figure-mount__id">FIG-01</span>
+  <strong>Initiating weir diagnostic</strong>
+  <p>Interactive evidence view. Released source: <code>data/metadata/initiating-case.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-02" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">02</p><h2>One change travels through the whole system</h2>
+  <p class="lede">A change in one input does not stay local. Discharge, crest length and coefficient determine head; head and unit discharge shape the downstream hydraulic state; geometry affects material demand and stability; and foundation class changes the scour question.</p>
+  <p class="chapter-bridge">So the first research task was to separate what can vary independently from what is already fixed by an equation or dependency.</p></div>
+  <div class="figure-mount " id="fig-02" data-figure="FIG-02" data-source="data/metadata/dependency-network.json" aria-label="Dependency network figure mount">
+  <span class="figure-mount__id">FIG-02</span>
+  <strong>Dependency network</strong>
+  <p>Interactive evidence view. Released source: <code>data/metadata/dependency-network.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-03" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">03</p><h2>From one section to 200,000 experiments</h2>
+  <p class="lede">The study then moved from one baseline section to a much wider synthetic experiment: one-at-a-time tests, response surfaces, four independent 50,000-scenario Latin hypercube samples (LHS), feasible-space filtering, Pareto analysis, normalized families and a separate Sobol/Jansen sensitivity design.</p>
+  <div class="stat-row"><div><strong>200,000</strong><span>replicated LHS scenarios</span></div><div><strong>10,317</strong><span>pooled eligible family cases</span></div><div><strong>8,192</strong><span>Sobol base N</span></div></div>
+  <p class="chapter-bridge">The purpose was not to manufacture a single preferred section. It was to see how the system behaves across a controlled range of conditions, and which trade-offs keep returning.</p></div>
+  <div class="figure-mount " id="fig-03" data-figure="FIG-03" data-source="data/runtime/fig-03-experiment-scale.json" aria-label="Experiment scale and filtering figure mount">
+  <span class="figure-mount__id">FIG-03</span>
+  <strong>Experiment scale and filtering</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-03-experiment-scale.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-04" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">04</p><h2>Head is a balance, not a single driver</h2>
+  <p class="lede">The head relationship is exact within the selected broad-crested formulation: <span class="formula">H = [Q/(C·L)]<sup>2/3</sup></span>. More discharge raises head, while more overflow length spreads the same discharge and lowers it. The exact elasticities are +2/3 for Q and −2/3 for L and C.</p>
+  <p class="chapter-bridge">Head is only the first response. Because Q/L also sets unit discharge, the same variables immediately carry into the downstream forcing question.</p></div>
+  <div class="figure-mount " id="fig-04" data-figure="FIG-04" data-source="data/runtime/fig-04-head-response.json" aria-label="Q × L → head response figure mount">
+  <span class="figure-mount__id">FIG-04</span>
+  <strong>Q × L → head response</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-04-head-response.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-05" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">05</p><h2>Forcing rises faster than it first appears</h2>
+  <p class="lede">Within the eligible formal-jump research domain, the fitted synthetic response follows <span class="formula">P′ ∝ q<sup>1.67</sup> Fr1<sup>1.87</sup></span> with R² ≈ 0.9999. Holding the other variable fixed, a 10% rise in q corresponds to about 17% more forcing, while a 10% rise in Fr1 corresponds to about 19.5% more.</p>
+  <p class="chapter-bridge">That response is strong, but it is not a stand-alone design answer. Any attempt to reduce forcing also has to be read alongside geometry and material demand.</p></div>
+  <div class="figure-mount " id="fig-05" data-figure="FIG-05" data-source="data/runtime/fig-05-forcing-response.json" aria-label="q × Fr1 → forcing response figure mount">
+  <span class="figure-mount__id">FIG-05</span>
+  <strong>q × Fr1 → forcing response</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-05-forcing-response.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-06" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">06</p><h2>Why height quickly becomes a material penalty</h2>
+  <p class="lede">The body-area proxy follows <span class="formula">A = P·T + 0.5·s·P²</span>. Height enters the downstream batter term quadratically, so the material proxy rises nonlinearly as the section becomes taller.</p>
+  <p class="chapter-bridge">But a smaller material proxy does not settle the section. Stability responds to a different combination of variables and has to be read separately.</p></div>
+  <div class="figure-mount " id="fig-06" data-figure="FIG-06" data-source="data/runtime/fig-06-body-area.json" aria-label="Height × slope → body area figure mount">
+  <span class="figure-mount__id">FIG-06</span>
+  <strong>Height × slope → body area</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-06-body-area.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-07" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">07</p><h2>Stability does not follow one simple rule</h2>
+  <p class="lede">Within the applicability-conditioned diagnostic regression, cohesion has the strongest favourable coefficient and height remains adverse; downstream slope, discharge and tailwater also contribute. The pooled R² is about 0.876.</p>
+  <div class="boundary-note" role="note"><strong>Important.</strong> These are diagnostic multivariable coefficients. They are not a universal field factor-of-safety equation and should not be read as one.</div></div>
+  <div class="figure-mount " id="fig-07" data-figure="FIG-07" data-source="data/runtime/fig-07-stability-drivers.json" aria-label="Conditional stability drivers figure mount">
+  <span class="figure-mount__id">FIG-07</span>
+  <strong>Conditional stability drivers</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-07-stability-drivers.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide" id="chapter-08" data-chapter>
+  <p class="chapter-number">08</p><h2>There is no single optimum weir</h2>
+  <p class="lede">Among 2,585 eligible competent-rock cases, 101 were nondominated when material proxy, forcing, tailwater mismatch and rock threshold were minimized together. In other words, no single case could be called better across all four objectives at once. None is a scalar winner.</p>
+  <p class="chapter-bridge">The useful result is therefore the shape of the trade-off, not the identity of one supposedly “best” case. Exact Pareto membership remains sample-sensitive.</p>
+  <div class="figure-mount figure-mount--wide" id="fig-08" data-figure="FIG-08" data-source="data/runtime/fig-08-pareto-trade-space.json" aria-label="Pareto trade space figure mount">
+  <span class="figure-mount__id">FIG-08</span>
+  <strong>Pareto trade space</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-08-pareto-trade-space.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-wide" id="chapter-09" data-chapter>
+  <p class="chapter-number">09</p><h2>Four patterns recur — but only three form clear cores</h2>
+  <p class="lede">When geometry is normalized, recurring behavioural envelopes appear. F2, F3 and F4 form the clearest cores; F1 is better read as a fuzzy transition band than as a hard engineering class. These are research families, not design types.</p>
+  <div class="figure-grid">
+    <div class="figure-mount " id="fig-09" data-figure="FIG-09" data-source="data/runtime/fig-09-family-map.json" aria-label="Normalized family map figure mount">
+  <span class="figure-mount__id">FIG-09</span>
+  <strong>Normalized family map</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-09-family-map.json</code></p>
+</div>
+    <div class="figure-mount " id="fig-10" data-figure="FIG-10" data-source="data/runtime/fig-10-family-tradeoffs.json" aria-label="Family trade-off dashboard figure mount">
+  <span class="figure-mount__id">FIG-10</span>
+  <strong>Family trade-off dashboard</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-10-family-tradeoffs.json</code></p>
+</div>
+    <div class="figure-mount " id="fig-11" data-figure="FIG-11" data-source="data/runtime/fig-11-family-replication.json" aria-label="Family share replication figure mount">
+  <span class="figure-mount__id">FIG-11</span>
+  <strong>Family share replication</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-11-family-replication.json</code></p>
+</div>
+  </div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-10" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">10</p><h2>High forcing does not automatically mean greater jump-development demand</h2>
+  <p class="lede">Unit discharge can raise forcing strongly even when normalized jump-development metrics remain similar at comparable Froude number. The two responses are connected, but they answer different questions: forcing describes response magnitude, while jump-development metrics describe the demand for dissipation development.</p>
+  <div class="boundary-note" role="note"><strong>Reference only.</strong> The jump-development lengths shown here are reference scaling relationships used in this research. They are not final IS 4997:2026 stilling-basin dimensions.</div></div>
+  <div class="figure-mount " id="fig-12" data-figure="FIG-12" data-source="data/runtime/fig-12-hydraulic-jump.json" aria-label="Hydraulic-jump development demand figure mount">
+  <span class="figure-mount__id">FIG-12</span>
+  <strong>Hydraulic-jump development demand</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-12-hydraulic-jump.json</code></p>
+</div>
+</section>
+
+<section class="chapter chapter--foundation" id="chapter-11" data-chapter>
+  <div class="shell-wide">
+    <p class="chapter-number">11</p><h2>Scour is where the models begin to disagree</h2>
+    <p class="lede">Bormann–Julien (BJ) and D’Agostino–Ferro (DAF) can both be evaluated in 14,369 common synthetic states, yet they do not tell the same story. Median DAF/BJ is ≈ 1.107, Spearman ρ is ≈ 0.422, and only about 50.3% of cases fall within a factor of two.</p>
+    <p class="chapter-bridge">That disagreement has structure. The next step is to describe where and how the models diverge, not to average them into a single number.</p>
+    <div class="figure-grid figure-grid--two">
+      <div class="figure-mount " id="fig-13" data-figure="FIG-13" data-source="data/runtime/fig-13-alluvial-model-comparison.json" aria-label="BJ vs DAF alluvial comparison figure mount">
+  <span class="figure-mount__id">FIG-13</span>
+  <strong>BJ vs DAF alluvial comparison</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-13-alluvial-model-comparison.json</code></p>
+</div>
+      <div class="figure-mount " id="fig-14" data-figure="FIG-14" data-source="data/runtime/fig-14-disagreement-envelope.json" aria-label="Alluvial disagreement envelope figure mount">
+  <span class="figure-mount__id">FIG-14</span>
+  <strong>Alluvial disagreement envelope</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-14-disagreement-envelope.json</code></p>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="chapter shell-wide chapter--split" id="chapter-12" data-chapter>
+  <div class="chapter__copy"><p class="chapter-number">12</p><h2>When everything varies together, what matters most?</h2>
+  <p class="lede">Global Sobol/Jansen analysis asks a different question: when the selected variables vary together across the stated synthetic ranges, which ones contribute most to each response? First-order influence is separated from total influence, including interactions. The answer depends on the response; head, forcing, jump behaviour, body area and rock threshold do not share one universal ranking.</p></div>
+  <div class="figure-mount " id="fig-15" data-figure="FIG-15" data-source="data/runtime/fig-15-global-sensitivity.json" aria-label="Global Sobol sensitivity figure mount">
+  <span class="figure-mount__id">FIG-15</span>
+  <strong>Global Sobol sensitivity</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-15-global-sensitivity.json</code></p>
+</div>
+</section>
+
+<section class="chapter chapter--synthesis" id="chapter-13" data-chapter>
+  <div class="shell-wide">
+    <p class="chapter-number chapter-number--light">13</p><h2>Putting the whole system back together</h2>
+    <p class="lede">Once the individual relationships are put back together, five dimensions remain distinct but connected: normalized response regime, response magnitude, dissipation-development demand, material/stability trade-off, and foundation/scour uncertainty. No single score or family can replace that combined view.</p>
+    <div class="figure-mount figure-mount--dark figure-mount--wide" id="fig-16" data-figure="FIG-16" data-source="data/runtime/fig-16-five-dimensions.json" aria-label="Five-dimension synthesis figure mount">
+  <span class="figure-mount__id">FIG-16</span>
+  <strong>Five-dimension synthesis</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-16-five-dimensions.json</code></p>
+</div>
+  </div>
+</section>
+
+<section class="chapter shell-wide" id="chapter-14" data-chapter>
+  <p class="chapter-number">14</p><h2>Explore the evidence yourself</h2>
+  <p class="lede">The Research Explorer lets readers interrogate the already released evidence directly—across variables, responses, families and analytical types—while staying inside the same published evidence boundaries. It compares evidence; it does not calculate a recommended section.</p>
+  <div class="figure-mount figure-mount--wide" id="fig-17" data-figure="FIG-17" data-source="data/runtime/fig-17-research-explorer.json" aria-label="Research Explorer figure mount">
+  <span class="figure-mount__id">FIG-17</span>
+  <strong>Research Explorer</strong>
+  <p>Interactive evidence view. Released source: <code>data/runtime/fig-17-research-explorer.json</code></p>
+</div>
+</section>
+
+<section class="chapter shell-reading" id="chapter-15" data-chapter>
+  <p class="chapter-number">15</p><h2>What this research can — and cannot — say</h2>
+  <div class="boundary-grid">
+    <div><h3>What it establishes</h3><p>The study shows how selected hydraulic, geometric, stability and foundation-related responses behave across the defined synthetic research domain. It identifies recurring trade-offs, shows where models disagree, and indicates which variables matter for specific responses under the stated analysis.</p></div>
+    <div><h3>What remains outside the claim</h3><p>It does not provide site validation or construction-ready dimensions. Final IS 4997:2026 basin provisions remain separate field-design evidence work, and the research does not establish a universal alluvial scour law or a final rock/foundation-depth method for field release.</p></div>
+  </div>
+</section>
+
+<section class="chapter chapter--methods" id="chapter-16" data-chapter>
+  <div class="shell-wide methods-grid">
+    <div>
+      <p class="chapter-number">16</p><h2>Methods, data, references and author</h2>
+      <details><summary>Synthetic experiment</summary><p>The synthetic experiment progressed from a baseline section through one-at-a-time tests and pairwise response surfaces to four independent 50,000-scenario LHS replications. Eligibility filtering, Pareto analysis and normalized family analysis were then applied to the relevant research populations.</p></details>
+      <details><summary>Global sensitivity</summary><p>A dedicated scrambled Sobol/Jansen design used base N = 8,192 on validated response surrogates. The published indices are specific to the stated synthetic ranges. Stability is intentionally excluded from unconditional Sobol ranking because its diagnostic response is applicability-conditioned.</p></details>
+      <details><summary>Scour-model comparison</summary><p>BJ and DAF are compared only where both models are available in the common synthetic overlap. The compact envelope describes disagreement between the two models; it is not a physical scour equation and neither model is treated as field truth.</p></details>
+      <details><summary>Data provenance</summary><p>Authoritative source tables remain the build inputs. The public article reads compact render-ready JSON from the study analysis. Original PNG/JPG figures are retained only as visual references and are never used as numerical data sources.</p></details>
+    </div>
+    <aside class="author-card" aria-label="About the author">
+      <p class="eyebrow eyebrow--light">Author</p>
+      <h3>Kaushal Gadariya</h3>
+      <p>Soil and Water Conservation Engineer</p>
+      <p class="author-card__bio">Soil and water conservation engineer working across agricultural and natural-resource systems, with a practical interest in turning technical analysis into evidence that can support field, programme and institutional decisions.</p>
+      <div class="author-card__links">
+        <a href="https://www.linkedin.com/in/kaushal-gadariya-670221b1/" rel="me noopener">LinkedIn</a>
+        <a href="https://knightfox789.github.io/kaushal-gadariya-portfolio/" rel="noopener">Portfolio</a>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="shell-wide site-footer__row"><span>Weir Research — Interactive Web Article</span><span>Research communication, not construction guidance.</span></div></footer>
+</body>
+</html>

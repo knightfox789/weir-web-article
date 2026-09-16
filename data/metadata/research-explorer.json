@@ -1,0 +1,15 @@
+{
+  "figure_id": "FIG-17",
+  "purpose": "Explore frozen research findings, not design a weir",
+  "response_modes": [
+    {"response":"head","data":["fig-04-q-l-head.csv"],"statistic":"exact equation + elasticity"},
+    {"response":"forcing","data":["fig-05-q-fr1-forcing.csv","fig-15-sobol.csv"],"statistic":"fitted power law + R² / Sobol S1-ST"},
+    {"response":"material","data":["fig-06-height-slope-area.csv","fig-10-family-tradeoffs.csv","fig-15-sobol.csv"],"statistic":"exact equation + local elasticity / percentiles / Sobol"},
+    {"response":"stability","data":["fig-07-stability-drivers.csv"],"statistic":"Spearman rho / standardized coefficients"},
+    {"response":"jump","data":["fig-12-jump-scaling.csv"],"statistic":"derived normalized jump metrics"},
+    {"response":"rock","data":["fig-10-family-tradeoffs.csv","fig-15-sobol.csv"],"statistic":"exact threshold elasticity / Sobol"},
+    {"response":"alluvial uncertainty","data":["fig-13-bj-daf-comparison.csv","fig-14-disagreement-envelope.csv"],"statistic":"ratio, rank correlation, q10/q50/q90 envelope"}
+  ],
+  "required_panels": ["What this means","What this does not mean","Source experiment","Applicable domain","Units"],
+  "prohibited_outputs": ["recommended design dimensions","construction-ready section","safety certification","unqualified optimum"]
+}

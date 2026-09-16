@@ -1,0 +1,43 @@
+/* Phase 5 — conditional stability, Pareto and family interactions */
+.p5-zero-line { stroke: #aeb8be; stroke-width: 1.5; stroke-dasharray: 4 4; }
+.p5-whisker, .p5-whisker-cap { stroke: #7c8991; stroke-width: 1.5; }
+.p5-coef-bar { transform-box: fill-box; transform-origin: center; opacity: .82; transition: transform .7s ease var(--row-delay,0ms), opacity .4s ease; }
+.p5-coef-bar--positive { fill: var(--teal); }
+.p5-coef-bar--negative { fill: var(--coral); }
+.p5-coef-dot { stroke: var(--white); stroke-width: 2; }
+.p5-coef-dot--positive { fill: var(--teal); }
+.p5-coef-dot--negative { fill: var(--coral); }
+.p5-stability-row:focus { outline: none; }
+.p5-stability-row:focus .p5-whisker { stroke: var(--navy); stroke-width: 3; }
+.p5-axis { stroke: #9da9b0; stroke-width: 1.2; }
+.p5-pareto-point { fill: rgb(17 123 123 / .58); stroke: var(--teal); stroke-width: 1.2; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.5); transition: opacity .35s ease var(--point-delay,0ms), transform .35s ease var(--point-delay,0ms); }
+.p5-entered .p5-pareto-point { opacity: .78; transform: scale(1); }
+.p5-pareto-point--full { fill: var(--navy); stroke: var(--navy); }
+.p5-pareto-point:focus { outline: none; opacity: 1; stroke: var(--coral); stroke-width: 3; }
+.p5-family-envelope { opacity: .12; stroke-width: 2; stroke-dasharray: 7 5; }
+.p5-family-median { stroke-width: 2.5; }
+.p5-family-point { opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.45); transition: opacity .35s ease var(--point-delay,0ms), transform .35s ease var(--point-delay,0ms); stroke-width: 1.4; }
+.p5-entered .p5-family-point { opacity: .76; transform: scale(1); }
+.p5-family-point.is-muted, .p5-trade-row.is-muted, .p5-share-dot.is-muted { opacity: .13 !important; }
+.p5-family-point:focus { outline: none; stroke: var(--coral); stroke-width: 3.2; opacity: 1 !important; }
+.p5-family--f1 { fill: #8b8271; stroke: #8b8271; }
+.p5-family--f2 { fill: var(--aqua); stroke: var(--aqua); }
+.p5-family--f3 { fill: var(--teal); stroke: var(--teal); }
+.p5-family--f4 { fill: var(--navy); stroke: var(--navy); }
+.p5-metric-baseline { stroke: #dde3e6; stroke-width: 2; }
+.p5-range { stroke-width: 4; stroke-linecap: round; }
+.p5-range-dot { stroke: var(--white); stroke-width: 1.5; }
+.p5-trade-row { opacity: .82; transition: opacity .3s ease; }
+.p5-share-line { fill: none; stroke-width: 2.6; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .85s ease var(--line-delay,0ms), opacity .3s ease; }
+.p5-entered .p5-share-line { stroke-dashoffset: 0; }
+.p5-share-dot { stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.5); transition: opacity .3s ease var(--point-delay,0ms), transform .3s ease var(--point-delay,0ms); }
+.p5-entered .p5-share-dot { opacity: 1; transform: scale(1); }
+.p5-share-dot:focus { outline: none; stroke: var(--coral); stroke-width: 4; }
+.p5-share-annotation { font: 11px ui-sans-serif,system-ui; }
+.p5-seed-highlight { stroke: var(--coral); stroke-width: 9; opacity: .08; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p5-coef-bar, .p5-pareto-point, .p5-family-point, .p5-share-line, .p5-share-dot { transition: none !important; animation: none !important; }
+  .p5-pareto-point, .p5-family-point, .p5-share-dot { opacity: .8; transform: none; }
+  .p5-share-line { stroke-dashoffset: 0; }
+}

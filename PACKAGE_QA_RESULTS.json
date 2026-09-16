@@ -1,0 +1,13 @@
+{
+  "package": "Weir-research-article-Phase10-ready",
+  "static_integrity": {"passed": 52, "total": 52},
+  "javascript_syntax": "PASS",
+  "json_parse": "PASS",
+  "figure_mounts": "FIG-01 through FIG-17 present once each",
+  "chapter_ids": "chapter-00 through chapter-16 present once each",
+  "data_source_paths": "PASS",
+  "relative_js_imports": "PASS",
+  "local_http_smoke": "PASS (index.html returned HTTP 200)",
+  "phase10_editorial_audit": "108/108 PASS before packaging",
+  "note": "Final cross-browser/device acceptance should be run from the new GitHub repository / GitHub Pages deployment."
+}

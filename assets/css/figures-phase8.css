@@ -1,0 +1,54 @@
+/* Phase 8 — global Sobol sensitivity + five-dimensional synthesis */
+.p8-axis, .p8-tick { stroke: #9da9b0; stroke-width: 1.1; }
+.p8-zero-line { stroke: #7b8790; stroke-width: 1.1; stroke-dasharray: 4 4; }
+.p8-chart-title { fill: var(--navy); font-size: 18px; font-weight: 800; }
+.p8-var-label { fill: var(--navy); font-size: 14px; font-weight: 700; }
+.p8-index-bar, .p8-gap-bar { stroke: var(--teal); stroke-width: 15; stroke-linecap: round; transform-box: fill-box; transform-origin: left center; transform: scaleX(.05); transition: transform .65s ease var(--row-delay,0ms), stroke .3s ease; }
+.p8-gap-bar { stroke: var(--coral); }
+.p8-entered .p8-index-bar, .p8-entered .p8-gap-bar { transform: scaleX(1); }
+.p8-ci-line, .p8-ci-cap { stroke: var(--navy); stroke-width: 1.5; opacity: .72; }
+.p8-index-dot { fill: var(--white); stroke: var(--teal); stroke-width: 3; }
+.p8-s1-marker { fill: var(--coral); stroke: var(--white); stroke-width: 1.2; }
+.p8-value-label { fill: #40505b; font-size: 12px; font-weight: 750; }
+.p8-sobol-row:focus { outline: none; }
+.p8-sobol-row:focus .p8-index-bar, .p8-sobol-row:focus .p8-gap-bar { stroke: var(--navy); }
+.p8-method-card { grid-column: 1 / -1; display: grid; gap: 5px; padding: 14px 16px; border-top: 1px solid rgb(11 31 51 / .1); color: #40505b; font-size: .86rem; }
+.p8-method-card strong { color: var(--navy); }
+
+.p8-synthesis .p4-figure__canvas { background: rgb(11 31 51 / .98); border-radius: 20px; padding: 8px; }
+.p8-synthesis .p4-figure__canvas svg { min-height: 390px; }
+.p8-synthesis .p4-figure__summary, .p8-synthesis .p4-figure__kicker { max-width: 86ch; }
+.p8-stage-buttons { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
+.p8-stage-button { border: 1px solid rgb(11 31 51 / .18); background: var(--white); color: var(--navy); border-radius: 999px; padding: 8px 12px; font: inherit; font-size: .78rem; font-weight: 750; cursor: pointer; }
+.p8-stage-button:hover, .p8-stage-button:focus-visible, .p8-stage-button.is-selected { border-color: var(--teal); box-shadow: 0 0 0 2px rgb(17 123 123 / .12); }
+.p8-stage-button.is-selected { background: var(--teal); color: var(--white); }
+.p8-stage-button--all.is-selected { background: var(--navy); }
+.p8-dim-node { fill: rgb(247 246 241 / .06); stroke: rgb(247 246 241 / .26); stroke-width: 2; transition: fill .45s ease, stroke .45s ease, transform .45s ease var(--dim-delay,0ms); transform-box: fill-box; transform-origin: center; }
+.p8-dimension.is-active .p8-dim-node { fill: rgb(82 199 217 / .13); stroke: var(--aqua); transform: scale(1.08); }
+.p8-dimension { opacity: .42; transition: opacity .45s ease var(--dim-delay,0ms); }
+.p8-dimension.is-active { opacity: 1; }
+.p8-dimension:focus { outline: none; opacity: 1; }
+.p8-dimension:focus .p8-dim-node { stroke: var(--coral); stroke-width: 4; }
+.p8-dim-glyph { fill: none; stroke: rgb(247 246 241 / .46); stroke-width: 3; transition: stroke .4s ease, fill .4s ease; }
+.p8-dim-glyph.is-active { stroke: var(--aqua); }
+circle.p8-dim-glyph.is-active { fill: var(--aqua); stroke: var(--aqua); }
+.p8-dim-number { fill: var(--coral); font-size: 12px; font-weight: 850; }
+.p8-dim-label { fill: var(--paper); font-size: 13px; font-weight: 800; }
+.p8-dim-source { fill: rgb(247 246 241 / .58); font-size: 11px; font-weight: 650; }
+.p8-connector { stroke: rgb(247 246 241 / .16); stroke-width: 3; stroke-dasharray: 5 6; transition: stroke .5s ease, stroke-dasharray .5s ease; }
+.p8-connector.is-active { stroke: var(--aqua); stroke-dasharray: 0; }
+.p8-synthesis-card { grid-column: 1 / -1; display: grid; gap: 7px; padding: 16px 18px; border-left: 4px solid var(--teal); background: rgb(17 123 123 / .06); }
+.p8-synthesis-card strong { color: var(--navy); font-size: 1rem; }
+.p8-synthesis-card span { color: #40505b; }
+.p8-synthesis-card small { color: #667580; }
+
+@media (max-width: 760px) {
+  .p8-stage-buttons { display: grid; grid-template-columns: 1fr 1fr; }
+  .p8-stage-button { border-radius: 12px; text-align: left; }
+  .p8-synthesis .p4-figure__canvas { overflow-x: auto; }
+  .p8-synthesis .p4-figure__canvas svg { width: 820px; max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p8-index-bar, .p8-gap-bar, .p8-dim-node, .p8-dimension, .p8-connector { transition: none !important; animation: none !important; }
+  .p8-index-bar, .p8-gap-bar { transform: none; }
+}

@@ -1,0 +1,13 @@
+{
+  "figure_id": "FIG-16",
+  "title": "Five-dimensional research framework",
+  "stages": [
+    {"id":1,"name":"Normalized regime","question":"What kind of hydraulic–geometry state is this?","linked_figures":["FIG-09","FIG-11"]},
+    {"id":2,"name":"Response magnitude","question":"How strongly does the selected response change?","linked_figures":["FIG-04","FIG-05","FIG-06","FIG-15"]},
+    {"id":3,"name":"Dissipation-development demand","question":"What does the jump require independently of forcing magnitude?","linked_figures":["FIG-12"]},
+    {"id":4,"name":"Material / stability trade-off","question":"What is gained and paid for across competing responses?","linked_figures":["FIG-07","FIG-08","FIG-10"]},
+    {"id":5,"name":"Foundation / scour uncertainty","question":"How much uncertainty remains in the foundation/scour branch?","linked_figures":["FIG-13","FIG-14"]}
+  ],
+  "conclusion": "No single family, scalar index or empirical scour equation captures all five dimensions.",
+  "boundary": "Research synthesis only; not construction-ready design guidance."
+}

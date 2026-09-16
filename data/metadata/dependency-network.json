@@ -1,0 +1,39 @@
+{
+  "figure_id": "FIG-02",
+  "nodes": [
+    {"id":"Q","label":"Discharge","type":"input"},
+    {"id":"L","label":"Effective overflow length","type":"input"},
+    {"id":"C","label":"Discharge coefficient","type":"input"},
+    {"id":"H","label":"Head over crest","type":"derived"},
+    {"id":"q","label":"Unit discharge","type":"derived"},
+    {"id":"y1","label":"Pre-jump depth","type":"derived"},
+    {"id":"Fr1","label":"Froude number","type":"derived"},
+    {"id":"y2","label":"Conjugate depth","type":"derived"},
+    {"id":"dE","label":"Jump energy loss","type":"response"},
+    {"id":"forcing","label":"Hydraulic forcing","type":"response"},
+    {"id":"tailwater","label":"Tailwater compatibility","type":"response"},
+    {"id":"P","label":"Structure height","type":"design"},
+    {"id":"T","label":"Top width","type":"design"},
+    {"id":"s","label":"Downstream slope","type":"design"},
+    {"id":"B","label":"Base width","type":"derived"},
+    {"id":"area","label":"Body area / material proxy","type":"response"},
+    {"id":"weight","label":"Self-weight","type":"derived"},
+    {"id":"stability","label":"Stability diagnostic","type":"response"},
+    {"id":"foundation","label":"Foundation class","type":"categorical"},
+    {"id":"rock","label":"Rock threshold response","type":"response"},
+    {"id":"alluvial","label":"Alluvial scour model disagreement","type":"uncertainty"}
+  ],
+  "edges": [
+    {"source":"Q","target":"H"},{"source":"L","target":"H"},{"source":"C","target":"H"},
+    {"source":"Q","target":"q"},{"source":"L","target":"q"},{"source":"q","target":"y1"},
+    {"source":"y1","target":"Fr1"},{"source":"Fr1","target":"y2"},{"source":"y1","target":"y2"},
+    {"source":"y1","target":"dE"},{"source":"y2","target":"dE"},{"source":"q","target":"forcing"},
+    {"source":"Fr1","target":"forcing"},{"source":"y2","target":"tailwater"},
+    {"source":"P","target":"B"},{"source":"T","target":"B"},{"source":"s","target":"B"},
+    {"source":"P","target":"area"},{"source":"T","target":"area"},{"source":"s","target":"area"},
+    {"source":"area","target":"weight"},{"source":"weight","target":"stability"},{"source":"Q","target":"stability"},
+    {"source":"tailwater","target":"stability"},{"source":"foundation","target":"rock"},{"source":"foundation","target":"alluvial"},
+    {"source":"forcing","target":"rock"},{"source":"q","target":"alluvial"},{"source":"tailwater","target":"alluvial"}
+  ],
+  "derived_rule": "Derived variables are not independently varied when their parents already define them."
+}

@@ -1,0 +1,23 @@
+{
+  "figure_id": "FIG-01",
+  "case_type": "illustrative initiating diagnostic",
+  "Q_m3s": 25.0,
+  "overflow_length_m": 20.0,
+  "bed_RL_m": 100.0,
+  "crest_RL_m": 102.0,
+  "structure_height_m": 2.0,
+  "stated_top_width_m": 0.6,
+  "stated_base_width_m": 2.5,
+  "stated_downstream_slope": "1V:2H",
+  "concrete_grade": "M20",
+  "steel_grade": "Fe500",
+  "foundation_description": "hard rock",
+  "diagnostic_flags": [
+    {"id":"geometry","label":"Geometry conflict","detail":"0.60 m crest, 2.50 m base, 2.0 m height and 1V:2H downstream slope cannot all describe one consistent section."},
+    {"id":"centroid","label":"Centroid / resisting-moment error","detail":"The initiating calculation used an incorrect centroid for the asymmetric body."},
+    {"id":"hfl","label":"Hydraulic depth mismatch","detail":"The water-depth/HFL assumption was inconsistent with the calculated hydraulic head."},
+    {"id":"uplift","label":"Uplift omitted","detail":"The original stability sketch did not include uplift."},
+    {"id":"protection","label":"Downstream protection unresolved","detail":"Apron, cutoff, tailwater, jump and scour/foundation requirements could not be verified from the sketch."}
+  ],
+  "caveat": "Illustrative initiating case only; not a final design."
+}

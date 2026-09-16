@@ -1,0 +1,21 @@
+{
+  "Q_m3s":{"label":"Discharge","unit":"m³/s"},
+  "L_m":{"label":"Effective overflow length","unit":"m"},
+  "C_bcw":{"label":"Broad-crested coefficient","unit":"-"},
+  "H_m":{"label":"Head over crest","unit":"m"},
+  "unit_discharge_m2s":{"label":"Unit discharge","unit":"m²/s"},
+  "Fr1":{"label":"Upstream Froude number","unit":"-"},
+  "forcing_kW_m":{"label":"Hydraulic forcing","unit":"kW/m"},
+  "structure_height_m":{"label":"Structure height","unit":"m"},
+  "top_width_m":{"label":"Top width","unit":"m"},
+  "downstream_slope_h_per_v":{"label":"Downstream slope","unit":"H/V"},
+  "body_area_m2_per_m":{"label":"Body area proxy","unit":"m²/m"},
+  "B_over_P":{"label":"Relative base width B/P","unit":"-"},
+  "T_over_P":{"label":"Relative top width T/P","unit":"-"},
+  "head_over_P":{"label":"Normalized head H/P","unit":"-"},
+  "bj_scour_m":{"label":"Bormann–Julien scour","unit":"m"},
+  "daf_scour_m":{"label":"D’Agostino–Ferro scour","unit":"m"},
+  "ratio":{"label":"DAF/BJ ratio","unit":"-"},
+  "S1":{"label":"First-order Sobol index","unit":"-"},
+  "ST":{"label":"Total-order Sobol index","unit":"-"}
+}

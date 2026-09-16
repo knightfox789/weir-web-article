@@ -1,0 +1,7 @@
+{
+  "F1": {"label":"Low-rise / tailwater-deficient transition band","status":"fuzzy transition; not hard class"},
+  "F2": {"label":"Compact / hydraulically intense low-rise","status":"replicated research core"},
+  "F3": {"label":"Taller balanced / low-rock-threshold","status":"replicated research core"},
+  "F4": {"label":"Broad-base / low-forcing","status":"replicated research core"},
+  "Transition": {"label":"Alluvial/normalized transition or overlap state","status":"do not force into hard core"}
+}
