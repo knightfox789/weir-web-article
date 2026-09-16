@@ -1,10 +1,11 @@
 {
   "release": "v1.0",
-  "status": "release_candidate_accepted_pending_main_closure",
+  "status": "controlled_release_accepted",
   "publication": {
     "repository": "knightfox789/weir-web-article",
     "url": "https://knightfox789.github.io/weir-web-article/",
     "scientific_publication_content_commit": "df13658c638d590b4b978e2e3a691a2a428b067c",
+    "phase_13_acceptance_commit": "b12fdab71029999dc3821a535ece0c3f200794e3",
     "figure_count": 17,
     "chapter_count": 17,
     "authoritative_source_inputs": 21,
@@ -20,10 +21,12 @@
     "phase_10": "108/108 PASS",
     "phase_11": "161/161 PASS",
     "phase_12": "374/374 PASS",
-    "phase_13_release_candidate": "208/208 PASS"
+    "phase_13": "208/208 PASS"
   },
   "release_browser_gate": {
     "workflow": ".github/workflows/phase13-browser-acceptance.yml",
+    "main_workflow_run_id": 35096686145,
+    "pages_deployment_run_id": 35096684522,
     "playwright": "1.63.0",
     "engines": [
       "Chromium 153.0.8010.12",
@@ -35,7 +38,9 @@
       "mobile Chromium + reduced motion",
       "desktop Firefox",
       "mobile WebKit"
-    ]
+    ],
+    "main_evidence_artifact_id": 10446471453,
+    "main_evidence_sha256": "31f27c78d7ca819e3b9c399ac8a3fd03712d3b7a943963636f4b4e970b45a5b7"
   },
   "science_boundaries": [
     "stability coefficients are conditional diagnostics, not field factor-of-safety equations",
@@ -48,5 +53,5 @@
     "final rock foundation depth/protection remains open",
     "final IS 4997:2026 stilling-basin geometry remains open"
   ],
-  "canonical_release_commit": "Recorded by the final Library recovery checkpoint after merge; a commit cannot contain its own future merge SHA."
+  "release_identity_note": "The Phase 13 acceptance commit passed both the exact-commit GitHub Pages deployment and the main-branch browser gate. Any later commit that only closes release documentation does not alter the frozen scientific publication content. The canonical latest main commit is recorded in the Library continuation checkpoint."
 }
