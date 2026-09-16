@@ -18,6 +18,35 @@
 .p8-synthesis .p4-figure__canvas { background: rgb(11 31 51 / .98); border-radius: 20px; padding: 8px; }
 .p8-synthesis .p4-figure__canvas svg { min-height: 390px; }
 .p8-synthesis .p4-figure__summary, .p8-synthesis .p4-figure__kicker { max-width: 86ch; }
+/* FIG-16 sits inside a dark chapter mount, but its live figure frame is white.
+   These rules prevent the placeholder's dark-theme descendant styles from
+   leaking into the rendered title, copy and boundary note. */
+.p8-synthesis .p4-figure__title {
+  margin: 0;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+  line-height: 1.08;
+}
+.p8-synthesis .p4-figure__kicker { margin: 4px 0 0; color: var(--muted); font-size: .88rem; }
+.p8-synthesis .p4-figure__summary { color: #34434e; font-size: .91rem; }
+.p8-synthesis .p4-figure__caveat strong {
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 800;
+  line-height: inherit;
+}
+.p8-synthesis .p8-synthesis-card strong {
+  margin: 0;
+  color: var(--navy);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
 .p8-stage-buttons { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
 .p8-stage-button { border: 1px solid rgb(11 31 51 / .18); background: var(--white); color: var(--navy); border-radius: 999px; padding: 8px 12px; font: inherit; font-size: .78rem; font-weight: 750; cursor: pointer; }
 .p8-stage-button:hover, .p8-stage-button:focus-visible, .p8-stage-button.is-selected { border-color: var(--teal); box-shadow: 0 0 0 2px rgb(17 123 123 / .12); }
@@ -25,17 +54,17 @@
 .p8-stage-button--all.is-selected { background: var(--navy); }
 .p8-dim-node { fill: rgb(247 246 241 / .06); stroke: rgb(247 246 241 / .26); stroke-width: 2; transition: fill .45s ease, stroke .45s ease, transform .45s ease var(--dim-delay,0ms); transform-box: fill-box; transform-origin: center; }
 .p8-dimension.is-active .p8-dim-node { fill: rgb(82 199 217 / .13); stroke: var(--aqua); transform: scale(1.08); }
-.p8-dimension { opacity: .42; transition: opacity .45s ease var(--dim-delay,0ms); }
+.p8-dimension { opacity: .62; transition: opacity .45s ease var(--dim-delay,0ms); }
 .p8-dimension.is-active { opacity: 1; }
 .p8-dimension:focus { outline: none; opacity: 1; }
 .p8-dimension:focus .p8-dim-node { stroke: var(--coral); stroke-width: 4; }
-.p8-dim-glyph { fill: none; stroke: rgb(247 246 241 / .46); stroke-width: 3; transition: stroke .4s ease, fill .4s ease; }
+.p8-dim-glyph { fill: none; stroke: rgb(247 246 241 / .58); stroke-width: 3; transition: stroke .4s ease, fill .4s ease; }
 .p8-dim-glyph.is-active { stroke: var(--aqua); }
 circle.p8-dim-glyph.is-active { fill: var(--aqua); stroke: var(--aqua); }
 .p8-dim-number { fill: var(--coral); font-size: 12px; font-weight: 850; }
 .p8-dim-label { fill: var(--paper); font-size: 13px; font-weight: 800; }
-.p8-dim-source { fill: rgb(247 246 241 / .58); font-size: 11px; font-weight: 650; }
-.p8-connector { stroke: rgb(247 246 241 / .16); stroke-width: 3; stroke-dasharray: 5 6; transition: stroke .5s ease, stroke-dasharray .5s ease; }
+.p8-dim-source { fill: rgb(247 246 241 / .72); font-size: 11px; font-weight: 650; }
+.p8-connector { stroke: rgb(247 246 241 / .24); stroke-width: 3; stroke-dasharray: 5 6; transition: stroke .5s ease, stroke-dasharray .5s ease; }
 .p8-connector.is-active { stroke: var(--aqua); stroke-dasharray: 0; }
 .p8-synthesis-card { grid-column: 1 / -1; display: grid; gap: 7px; padding: 16px 18px; border-left: 4px solid var(--teal); background: rgb(17 123 123 / .06); }
 .p8-synthesis-card strong { color: var(--navy); font-size: 1rem; }
