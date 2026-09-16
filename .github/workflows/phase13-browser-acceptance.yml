@@ -32,6 +32,11 @@ jobs:
           PHASE13_URL: https://knightfox789.github.io/weir-web-article/
           PHASE13_OUT: phase13-artifacts
         run: node scripts/qa_phase13_browser.js
+      - name: Run release link and visual checks
+        env:
+          PHASE13_URL: https://knightfox789.github.io/weir-web-article/
+          PHASE13_OUT: phase13-artifacts
+        run: node scripts/qa_phase13_release.js
       - name: Upload Phase 13 evidence
         if: always()
         uses: actions/upload-artifact@v4
