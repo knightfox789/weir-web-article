@@ -1,0 +1,40 @@
+name: Phase 11 index patch
+
+on:
+  push:
+    branches: [phase-11-production-qa]
+
+permissions:
+  contents: write
+
+jobs:
+  patch-index:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: phase-11-production-qa
+      - name: Apply Phase 11 metadata and stylesheet link
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text()
+          text = text.replace('https://knightfox789.github.io/Weir-research-article/', 'https://knightfox789.github.io/weir-web-article/')
+          link = '  <link rel="stylesheet" href="assets/css/phase11-qa.css">\n'
+          anchor = '  <link rel="stylesheet" href="assets/css/styles.css">\n'
+          if link not in text:
+              text = text.replace(anchor, anchor + link)
+          p.write_text(text)
+          PY
+      - name: Commit patch
+        run: |
+          git diff --check
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Phase 11: fix canonical metadata and load QA overrides"
+            git push origin HEAD:phase-11-production-qa
+          fi
