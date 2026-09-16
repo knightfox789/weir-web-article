@@ -1,0 +1,39 @@
+{
+  "phase": 13,
+  "status": "RELEASE_CANDIDATE_PASS",
+  "date": "2026-09-16",
+  "repository": "knightfox789/weir-web-article",
+  "deployed_url": "https://knightfox789.github.io/weir-web-article/",
+  "publication_content_baseline": "df13658c638d590b4b978e2e3a691a2a428b067c",
+  "release_candidate_evidence": {
+    "workflow_run_id": 35090069008,
+    "artifact_id": 10443791980,
+    "artifact_sha256": "ad66f084ac61c4b899b63f3348dab35a8aa97e8111a97639539132f759cc6ce3",
+    "artifact_bytes": 1128386
+  },
+  "toolchain": {
+    "ubuntu": "24.04",
+    "node": "22",
+    "playwright": "1.63.0",
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "webkit": "26.6"
+  },
+  "browser_scenarios": [
+    {"name": "chromium-desktop", "viewport": "1440x1000", "passed": 49, "total": 49},
+    {"name": "chromium-mobile-reduced", "viewport": "390x844", "reduced_motion": true, "passed": 51, "total": 51},
+    {"name": "firefox-desktop", "viewport": "1366x900", "passed": 49, "total": 49},
+    {"name": "webkit-mobile", "viewport": "390x844", "passed": 50, "total": 50}
+  ],
+  "browser_checks": {"passed": 199, "total": 199},
+  "release_link_visual_checks": {"passed": 9, "total": 9},
+  "combined": {"passed": 208, "total": 208},
+  "publication_changes": {
+    "index_html": false,
+    "runtime_json": false,
+    "figure_renderers": false,
+    "figure_css": false,
+    "scientific_results": false
+  },
+  "final_closure_condition": "Merge reviewed branch, Pages deploy exact merge, and Phase 13 workflow PASS on main."
+}
