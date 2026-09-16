@@ -1,0 +1,52 @@
+{
+  "release": "v1.0",
+  "status": "release_candidate_accepted_pending_main_closure",
+  "publication": {
+    "repository": "knightfox789/weir-web-article",
+    "url": "https://knightfox789.github.io/weir-web-article/",
+    "scientific_publication_content_commit": "df13658c638d590b4b978e2e3a691a2a428b067c",
+    "figure_count": 17,
+    "chapter_count": 17,
+    "authoritative_source_inputs": 21,
+    "public_runtime_assets": 15
+  },
+  "controlled_phase_results": {
+    "phase_4": "70/70 PASS",
+    "phase_5": "120/120 PASS",
+    "phase_6": "79/79 PASS",
+    "phase_7": "112/112 PASS",
+    "phase_8": "121/121 PASS",
+    "phase_9": "140/140 PASS",
+    "phase_10": "108/108 PASS",
+    "phase_11": "161/161 PASS",
+    "phase_12": "374/374 PASS",
+    "phase_13_release_candidate": "208/208 PASS"
+  },
+  "release_browser_gate": {
+    "workflow": ".github/workflows/phase13-browser-acceptance.yml",
+    "playwright": "1.63.0",
+    "engines": [
+      "Chromium 153.0.8010.12",
+      "Firefox 155.0",
+      "WebKit 26.6"
+    ],
+    "scenarios": [
+      "desktop Chromium",
+      "mobile Chromium + reduced motion",
+      "desktop Firefox",
+      "mobile WebKit"
+    ]
+  },
+  "science_boundaries": [
+    "stability coefficients are conditional diagnostics, not field factor-of-safety equations",
+    "Pareto analysis has no scalar winner",
+    "normalized families are research regimes, not design classes",
+    "hydraulic-jump reference lengths are not final IS 4997:2026 basin dimensions",
+    "BJ and DAF remain separate empirical outputs and are not averaged",
+    "the disagreement envelope is a model-disagreement meta-model, not a physical scour law",
+    "final alluvial scour/site validation remains open",
+    "final rock foundation depth/protection remains open",
+    "final IS 4997:2026 stilling-basin geometry remains open"
+  ],
+  "canonical_release_commit": "Recorded by the final Library recovery checkpoint after merge; a commit cannot contain its own future merge SHA."
+}
