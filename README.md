@@ -1,6 +1,6 @@
 # Weir Research — Interactive Web Article
 
-**Repository status:** Publication release candidate — Phases 1–12 PASS; Phase 13 deployed-site browser acceptance PASS on the controlled release candidate and pending final merge/main verification.
+**Repository status:** Publication release v1.0 — controlled Phases 1–13 completed; deployed-site release acceptance is continuously enforced on `main` by the Phase 13 browser workflow.
 
 This repository publishes the completed small-weir parametric research as a **story-driven, interactive, GitHub Pages web article**.
 
@@ -37,7 +37,7 @@ Current status:
 - **Phase 10 — PASS:** complete reader-language editorial rewrite with scientific-preservation audit.
 - **Phase 11 — PASS:** responsive/mobile, accessibility, reduced-motion, performance/lazy-rendering and SEO QA.
 - **Phase 12 — PASS:** 374/374 scientific/provenance checks; all 21 authoritative sources and all 15 publication runtime assets verified/reproduced under the controlled build path.
-- **Phase 13 — RELEASE CANDIDATE PASS:** deployed GitHub Pages exercised with Playwright 1.63.0 across Chromium desktop, Chromium mobile/reduced-motion, Firefox desktop and WebKit mobile; final `main` verification follows the merge.
+- **Phase 13 — PASS:** deployed GitHub Pages exercised with Playwright 1.63.0 across Chromium desktop, Chromium mobile/reduced-motion, Firefox desktop and WebKit mobile; the controlled release gate is 208/208 PASS and runs on `main`.
 
 ## Provenance and reproducibility
 
