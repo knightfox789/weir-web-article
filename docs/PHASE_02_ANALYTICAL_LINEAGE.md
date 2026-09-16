@@ -40,6 +40,10 @@ The full per-original upstream-source and analytical-method lineage is machine-r
 
 ## Reproducibility
 
-`scripts/build_phase2_data.py` reads the authoritative source directory, records SHA-256 hashes, rebuilds the runtime JSON, and asserts the frozen quantitative checks. `data/metadata/source-sha-manifest.json` identifies the exact analytical inputs without publishing the large source tables.
+`scripts/build_phase2_data.py` reads the authoritative source directory, records SHA-256 hashes, rebuilds the Phase 2 base runtime JSON, and asserts the frozen quantitative checks. `data/metadata/source-sha-manifest.json` identifies the exact analytical inputs without publishing the large source tables.
+
+The current publication runtime is reproduced in two controlled stages: first run `scripts/build_phase2_data.py`, then run `scripts/build_phase4_runtime_support.py`. The second stage does **not** refit models or alter frozen scientific findings; it adds only render-support fields to FIG-03, FIG-05 and FIG-06 (replication context, deterministic display points, and control ranges) using the same frozen authoritative sources. It then refreshes `data/metadata/runtime-asset-manifest.json` so the manifest records the final post-augmentation publication assets.
+
+Phase 12 scientific QA independently reran this two-stage path and verified all 15 current runtime JSON assets byte-for-byte against the publication files.
 
 The complete per-web-figure contract is in `data/metadata/web-figure-contracts.json`, including upstream source, population/filter, method, output asset, headline finding, scientific caveat and intended interaction/motion behavior.

@@ -1,0 +1,45 @@
+{
+  "phase": 12,
+  "status": "PASS",
+  "total": 374,
+  "passed": 374,
+  "failed": 0,
+  "categories": {
+    "provenance": {"pass": 147, "fail": 0},
+    "population": {"pass": 17, "fail": 0},
+    "equations": {"pass": 8, "fail": 0},
+    "claims": {"pass": 12, "fail": 0},
+    "sensitivity": {"pass": 31, "fail": 0},
+    "stability": {"pass": 16, "fail": 0},
+    "boundaries": {"pass": 20, "fail": 0},
+    "pareto": {"pass": 4, "fail": 0},
+    "families": {"pass": 14, "fail": 0},
+    "jump": {"pass": 11, "fail": 0},
+    "foundation": {"pass": 2, "fail": 0},
+    "alluvial": {"pass": 19, "fail": 0},
+    "envelope": {"pass": 8, "fail": 0},
+    "synthesis": {"pass": 15, "fail": 0},
+    "reader_claims": {"pass": 16, "fail": 0},
+    "figure_data": {"pass": 34, "fail": 0}
+  },
+  "verified_main_baseline": "c147c7b85a2a7228dec2fd45ac2ca1d8603ebc35",
+  "source_files": 21,
+  "runtime_assets": 15,
+  "notes": [
+    "Authoritative source hashes are checked against data/metadata/source-sha-manifest.json.",
+    "All 15 publication runtime assets are independently rebuilt using Phase 2 base builder plus Phase 4 render-support augmentation and compared byte-for-byte.",
+    "Scientific runtime JSON is not modified by Phase 12; only provenance metadata/support tooling is corrected.",
+    "The current public runtime contains no authoritative CSV layer."
+  ],
+  "scientific_runtime_changed": false,
+  "provenance_correction": {
+    "restored_builder": "scripts/build_phase4_runtime_support.py",
+    "manifest_refreshed": true,
+    "affected_manifest_entries": [
+      "data/runtime/fig-03-experiment-scale.json",
+      "data/runtime/fig-05-forcing-response.json",
+      "data/runtime/fig-06-body-area.json"
+    ],
+    "runtime_assets_modified": false
+  }
+}
