@@ -1,0 +1,29 @@
+/* Phase 11 — accessibility, touch targets and contrast refinements */
+:root {
+  --muted: #62707A;
+  --coral-text: #B74D31;
+}
+
+.menu-button,
+.p4-button,
+.p4-stepper__button,
+.p4-control__select,
+.p8-stage-button,
+.p9-download {
+  min-height: 44px;
+}
+
+.chapter-number,
+.foundation-transition__eyebrow,
+.p4-error {
+  color: var(--coral-text);
+}
+
+.p4-label--warning {
+  fill: var(--coral-text);
+}
+
+.p9-loading,
+.p9-empty {
+  color: var(--muted);
+}

@@ -77,7 +77,44 @@ const RENDERERS = {
   'FIG-17': renderFig17
 };
 
-export async function initPhase4Figures() {
+async function loadAndRenderFigure(mount) {
+  if (mount.dataset.renderState === 'loading' || mount.dataset.renderState === 'ready') return;
+  mount.dataset.renderState = 'loading';
+  mount.setAttribute('aria-busy', 'true');
+  try {
+    const data = await loadJson(mount.dataset.source);
+    await RENDERERS[mount.dataset.figure](mount, data);
+    mount.dataset.renderState = 'ready';
+  } catch (error) {
+    mount.dataset.renderState = 'error';
+    console.error(`[${mount.dataset.figure}]`, error);
+    showFigureError(mount, error);
+  } finally {
+    mount.removeAttribute('aria-busy');
+  }
+}
+
+function scheduleFigureRendering(mounts) {
+  if (!('IntersectionObserver' in window)) {
+    mounts.forEach((mount) => { void loadAndRenderFigure(mount); });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      observer.unobserve(entry.target);
+      void loadAndRenderFigure(entry.target);
+    }
+  }, {
+    rootMargin: '600px 0px',
+    threshold: 0.01
+  });
+
+  mounts.forEach((mount) => observer.observe(mount));
+}
+
+export function initPhase4Figures() {
   ensureFigureStyles();
   ensurePhase5Styles();
   ensurePhase6Styles();
@@ -86,13 +123,5 @@ export async function initPhase4Figures() {
   ensurePhase9Styles();
   initFoundationTransition();
   const mounts = [...document.querySelectorAll('[data-figure]')].filter((mount) => RENDERERS[mount.dataset.figure]);
-  await Promise.all(mounts.map(async (mount) => {
-    try {
-      const data = await loadJson(mount.dataset.source);
-      await RENDERERS[mount.dataset.figure](mount, data);
-    } catch (error) {
-      console.error(`[${mount.dataset.figure}]`, error);
-      showFigureError(mount, error);
-    }
-  }));
+  scheduleFigureRendering(mounts);
 }
