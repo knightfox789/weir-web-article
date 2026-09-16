@@ -24,7 +24,7 @@ jobs:
       - name: Install Playwright
         run: |
           npm init -y
-          npm install --save-dev playwright
+          npm install --save-dev playwright@1.63.0
           npx playwright --version
           npx playwright install --with-deps chromium firefox webkit
       - name: Run deployed-site browser acceptance
